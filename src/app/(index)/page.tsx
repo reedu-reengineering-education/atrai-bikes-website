@@ -1,8 +1,11 @@
 import DataAnalyticsImage from "@/assets/images/data-analytics.png";
-import PartnersImage from "@/assets/images/partners.png";
+import Image52N from "@/assets/images/partners/52n.png";
+import ICImage from "@/assets/images/partners/instituto-cordial.png";
+import ReeduImage from "@/assets/images/partners/logo_small_text_white.png";
 import HardwareImage from "@/assets/images/sensebox-bike.jpeg";
 import BentoCard from "@/components/bento/bento-card";
 import H1 from "@/components/ui/typography/H1";
+import Image from "next/image";
 
 export default function Home() {
 	return (
@@ -15,28 +18,65 @@ export default function Home() {
 			</div>
 			<div className="max-w-6xl mx-auto w-full">
 				<div className="grid md:auto-rows-[18rem] grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto auto-rows-[10rem]">
+					<BentoCard href={"/about"} animatedBackground="beams">
+						<div className="absolute bottom-0 left-0 p-4">
+							<h2 className="text-2xl font-bold">About</h2>
+						</div>
+					</BentoCard>
 					<BentoCard href={"/analytics"} image={DataAnalyticsImage}>
 						<h2 className="text-2xl font-bold">Analytics</h2>
 					</BentoCard>
-					<BentoCard href={"/about"}>
-						<h2 className="text-2xl font-bold">About</h2>
-					</BentoCard>
-					<BentoCard href={"/results"}>
+					<BentoCard href={"/results"} animatedBackground="glowing-stars">
 						<h2 className="text-2xl font-bold">Results</h2>
 					</BentoCard>
-					<BentoCard aspect="square" image={HardwareImage} href={"/hardware"}>
-						<div className="absolute bottom-0 right-0 p-4">
+					<BentoCard size="large" image={HardwareImage} href={"/hardware"}>
+						<div className="absolute top-0 right-0 p-4">
 							<h2 className="text-2xl font-bold">Hardware</h2>
 						</div>
 					</BentoCard>
-					<BentoCard href={"/faq"}>
-						<h2 className="text-2xl font-bold">FAQ</h2>
+					<BentoCard href={"/blog"} animatedBackground="grid">
+						<div className="absolute top-0 left-0 w-full h-full flex items-center justify-center p-4">
+							<h2 className="text-2xl font-bold">Blog</h2>
+						</div>
 					</BentoCard>
-					<BentoCard href={"/blog"}>
-						<h2 className="text-2xl font-bold">Blog</h2>
+					<BentoCard
+						href={"/faq"}
+						animatedBackground="glowing-stars"
+						variant="light"
+					>
+						<h2 className="text-2xl font-bold text-background">FAQ</h2>
 					</BentoCard>
-					<BentoCard href={"/partner"} aspect="square" image={PartnersImage}>
-						<h2 className="text-2xl font-bold text-muted">Partner</h2>
+					<BentoCard href={"/partner"} size="large" animatedBackground="beams">
+						<div className="w-full h-full flex flex-col">
+							<h2 className="text-2xl font-bold">Partner</h2>
+							<div className="w-full h-full  flex items-center justify-around group-hover:scale-105 transition-all">
+								<div className="relative h-full aspect-square ">
+									<Image
+										src={ICImage}
+										alt="Instituto Cordial"
+										fill
+										className="object-contain"
+									/>
+								</div>
+								<div className="relative h-full aspect-square">
+									<Image
+										src={ReeduImage}
+										alt="Reedu"
+										fill
+										className="object-contain"
+									/>
+								</div>
+
+								<div className="relative h-full aspect-square">
+									<Image
+										src={Image52N}
+										alt="52n"
+										fill
+										className="object-contain"
+									/>
+								</div>
+							</div>
+						</div>
 					</BentoCard>
 				</div>
 			</div>
