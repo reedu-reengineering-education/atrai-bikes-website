@@ -13,6 +13,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "institutocordial.com.br",
 			},
+			{
+				protocol: "https",
+				hostname: "reedu.de",
+			},
 		],
 	},
 };

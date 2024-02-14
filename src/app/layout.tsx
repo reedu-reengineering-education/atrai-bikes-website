@@ -18,11 +18,11 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={cn(
-					"h-full bg-background antialiased flex flex-col",
+					"h-full bg-background relative antialiased flex flex-col",
 					GeistSans.className,
 				)}
 			>
-				<main className="container mx-auto flex-1 pb-12">{children}</main>
+				<main className="container mx-auto flex-1 pb-12 block">{children}</main>
 				<Footer />
 			</body>
 		</html>

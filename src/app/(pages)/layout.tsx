@@ -1,3 +1,4 @@
+import { TracingBeam } from "@/components/animated/tracing-beam";
 import Navbar from "@/components/layout/navbar";
 
 export default function SubLayout({
@@ -8,7 +9,9 @@ export default function SubLayout({
 	return (
 		<>
 			<Navbar />
-			<div className="max-w-2xl mx-auto">{children}</div>
+			<div className="max-w-2xl mx-auto">
+				<TracingBeam>{children}</TracingBeam>
+			</div>
 		</>
 	);
 }

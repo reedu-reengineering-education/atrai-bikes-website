@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
-import Image, { ImageProps } from "next/image";
+import { ImageProps } from "next/image";
+import { MdxImage } from "./components/mdx/mdx-image";
 import H1 from "./components/ui/typography/H1";
 import H2 from "./components/ui/typography/H2";
 import H3 from "./components/ui/typography/H3";
@@ -31,11 +32,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			</code>
 		),
 		img: (props) => (
-			<Image
-				sizes="100vw"
-				style={{ width: "100%", height: "auto" }}
-				{...(props as ImageProps)}
-			/>
+			<div className="w-full aspect-video relative">
+				<MdxImage {...(props as ImageProps)} fill className="object-contain" />
+			</div>
 		),
 		...components,
 	};
