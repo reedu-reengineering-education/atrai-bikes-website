@@ -33,7 +33,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 		),
 		img: (props) => (
 			<div className="w-full aspect-video relative">
-				<MdxImage {...(props as ImageProps)} fill className="object-contain" />
+				<MdxImage
+					{...(props as ImageProps)}
+					fill
+					className="object-contain"
+					placeholder="empty"
+				/>
 			</div>
 		),
 		...components,
