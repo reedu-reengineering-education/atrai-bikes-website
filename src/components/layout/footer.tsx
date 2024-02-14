@@ -9,8 +9,8 @@ export default function Footer() {
 				{/* Gradients */}
 				<div className="absolute inset-x-1/4 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-1/2 blur-sm" />
 				<div className="absolute inset-x-1/4 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-1/2" />
-				<div className="absolute left-[37.5%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-				<div className="absolute left-[37.5%] top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+				<div className="absolute left-[37.5%] top-0 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent h-[5px] w-1/4 blur-sm" />
+				<div className="absolute left-[37.5%] top-0 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent h-px w-1/4" />
 
 				{/* Core component */}
 				<SparklesCore
