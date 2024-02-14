@@ -8,13 +8,6 @@ export const metadata: Metadata = {
 	title: "Atrai Bikes",
 	description:
 		"Motivating and supporting individuals, businesses, and local governments to collect and analyze data on bike infrastructure for urban improvement.",
-	openGraph: {
-		type: "website",
-		url: "https://atrai.bike",
-		title: "About Atrai Bikes",
-		description:
-			"Motivating and supporting individuals, businesses, and local governments to collect and analyze data on bike infrastructure for urban improvement.",
-	},
 	keywords:
 		"Atrai Bikes, bike infrastructure, urban improvement, data collection, citizen science",
 };
