@@ -1,7 +1,10 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Url } from "next/dist/shared/lib/router/router";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { BackgroundBeams } from "../animated/beams";
 import { GlowingStarsBackgroundCard } from "../animated/glowing-stars";
 import { Card } from "../ui/card";
@@ -17,6 +20,7 @@ interface BentoCardProps {
 		| "glowing-stars"
 		| "grid"
 		| "background-gradient";
+	prependLngToHref?: boolean;
 }
 
 export default function BentoCard({
@@ -26,7 +30,12 @@ export default function BentoCard({
 	image,
 	href,
 	animatedBackground,
+	prependLngToHref = true,
 }: BentoCardProps) {
+	const pathname = usePathname();
+
+	const lng = pathname.split("/")[1];
+
 	const JustTheCard = (
 		<Card
 			className={cn(
@@ -66,7 +75,11 @@ export default function BentoCard({
 
 	if (href) {
 		return (
-			<Link href={href} passHref legacyBehavior>
+			<Link
+				href={prependLngToHref ? `${lng}/${href}` : href}
+				passHref
+				legacyBehavior
+			>
 				{JustTheCard}
 			</Link>
 		);

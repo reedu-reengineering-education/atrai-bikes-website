@@ -1,4 +1,5 @@
 import Footer from "@/components/layout/footer";
+import Navbar from "@/components/layout/navbar";
 import { cn } from "@/lib/utils";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
@@ -39,7 +40,10 @@ export default function RootLayout({
 					GeistSans.className,
 				)}
 			>
-				<main className="container mx-auto flex-1 pb-12 block">{children}</main>
+				<main className="container mx-auto flex-1 pb-12 block">
+					<Navbar />
+					{children}
+				</main>
 				<Footer />
 			</body>
 		</html>
