@@ -1,4 +1,5 @@
 import { promises as fs } from "fs";
+import path from "path";
 import { BackgroundBeams } from "@/components/animated/beams";
 import { GlowingStarsBackgroundCard } from "@/components/animated/glowing-stars";
 import { Card } from "@/components/ui/card";
@@ -11,7 +12,13 @@ import { Suspense } from "react";
 async function getData(content: string, lng = "de") {
 	try {
 		const file = await fs.readFile(
-			`${process.cwd()}/src/content/${content}/${content}.${lng}.mdx`,
+			path.join(
+				process.cwd(),
+				"src",
+				"content",
+				content,
+				`${content}.${lng}.mdx`,
+			),
 			"utf8",
 		);
 		if (!file) return { mdxSource: "" };
