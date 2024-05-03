@@ -1,3 +1,4 @@
+import path from "path";
 import NextMdx from "@next/mdx";
 
 const withMDX = NextMdx({
@@ -18,6 +19,9 @@ const nextConfig = {
 				hostname: "reedu.de",
 			},
 		],
+	},
+	experimental: {
+		outputFileTracingRoot: path.join(process.cwd(), "src", "content"),
 	},
 };
 
