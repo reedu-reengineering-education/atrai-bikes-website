@@ -1,13 +1,16 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { MDXProvider } from "@mdx-js/react";
 import { Url } from "next/dist/shared/lib/router/router";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BackgroundBeams } from "../animated/beams";
 import { GlowingStarsBackgroundCard } from "../animated/glowing-stars";
 import { Card } from "../ui/card";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+
+const Post = require("@/content/about/about.de.mdx");
 
 interface BentoCardProps {
 	children: React.ReactNode;
@@ -73,17 +76,26 @@ export default function BentoCard({
 		</Card>
 	);
 
-	if (href) {
-		return (
-			<Link
-				href={prependLngToHref ? `${lng}/${href}` : href}
-				passHref
-				legacyBehavior
-			>
-				{JustTheCard}
-			</Link>
-		);
-	}
+	// if (href) {
+	// 	return (
+	// 		<Link
+	// 			href={prependLngToHref ? `${lng}/${href}` : href}
+	// 			passHref
+	// 			legacyBehavior
+	// 		>
+	// 			{JustTheCard}
+	// 		</Link>
+	// 	);
+	// }
 
-	return JustTheCard;
+	return (
+		<Dialog>
+			<DialogTrigger asChild>{JustTheCard}</DialogTrigger>
+			<DialogContent className="max-w-7xl rounded-lg max-h-[80vh] overflow-auto">
+				<MDXProvider>
+					<Post />
+				</MDXProvider>
+			</DialogContent>
+		</Dialog>
+	);
 }
