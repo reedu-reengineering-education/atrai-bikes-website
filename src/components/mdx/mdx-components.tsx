@@ -1,11 +1,12 @@
 import type { MDXComponents } from "mdx/types";
 import { ImageProps } from "next/image";
-import { MdxImage } from "./components/mdx/mdx-image";
-import H1 from "./components/ui/typography/H1";
-import H2 from "./components/ui/typography/H2";
-import H3 from "./components/ui/typography/H3";
-import H4 from "./components/ui/typography/H4";
-import P from "./components/ui/typography/P";
+import Link from "next/link";
+import H1 from "../ui/typography/H1";
+import H2 from "../ui/typography/H2";
+import H3 from "../ui/typography/H3";
+import H4 from "../ui/typography/H4";
+import P from "../ui/typography/P";
+import { MdxImage } from "./mdx-image";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
 	return {
@@ -40,6 +41,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 					placeholder="empty"
 				/>
 			</div>
+		),
+		a: ({ children, href }) => (
+			<Link href={href!} className="text-primary underline" target="_blank">
+				{children}
+			</Link>
 		),
 		...components,
 	};

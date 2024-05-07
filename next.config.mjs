@@ -17,6 +17,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "reedu.de",
 			},
+			{
+				protocol: "https",
+				hostname: "cloud.reedu.de",
+			},
 		],
 	},
 };

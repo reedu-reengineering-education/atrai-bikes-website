@@ -2,11 +2,13 @@ import { promises as fs } from "fs";
 import path from "path";
 import { BackgroundBeams } from "@/components/animated/beams";
 import { GlowingStarsBackgroundCard } from "@/components/animated/glowing-stars";
+import { useMDXComponents } from "@/components/mdx/mdx-components";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
-import { useMDXComponents } from "@/mdx-components";
 import { compileMDX } from "next-mdx-remote/rsc";
+import Image from "next/image";
 import { Suspense } from "react";
 
 async function getData(content: string, lng = "de") {
@@ -32,8 +34,9 @@ export default async function PageDialog({
 	content,
 	lng,
 	animatedBackground,
-	size,
 	children,
+	className,
+	image,
 }: {
 	content: string;
 	lng: string;
@@ -42,8 +45,9 @@ export default async function PageDialog({
 		| "glowing-stars"
 		| "grid"
 		| "background-gradient";
-	size?: "normal" | "large";
 	children: React.ReactNode;
+	className?: string;
+	image?: string;
 }) {
 	const { mdxSource } = await getData(content, lng);
 
@@ -58,9 +62,9 @@ export default async function PageDialog({
 	const Trigger = () => (
 		<Card
 			className={cn(
-				size === "large" ? "col-span-2" : "col-span-1",
 				"from-muted to-background/90",
 				"bg-gradient-to-br w-full break-inside-avoid relative rounded-md overflow-hidden group cursor-pointer",
+				className,
 			)}
 		>
 			{animatedBackground === "beams" && (
@@ -76,6 +80,15 @@ export default async function PageDialog({
 					</div>
 				</div>
 			)}
+			{image && (
+				<Image
+					src={image}
+					fill
+					objectFit="cover"
+					className="object-center"
+					alt={content}
+				/>
+			)}
 
 			<div className="absolute top-0 left-0 w-full h-full p-4">{children}</div>
 		</Card>
@@ -86,8 +99,10 @@ export default async function PageDialog({
 			<DialogTrigger asChild>
 				<Trigger />
 			</DialogTrigger>
-			<DialogContent className="max-w-7xl rounded-lg max-h-[80vh] overflow-auto no-scrollbar">
-				<Suspense fallback={"Loading..."}>{mdxContent}</Suspense>
+			<DialogContent className="max-w-5xl rounded-lg overflow-auto no-scrollbar">
+				<ScrollArea className="max-h-[80vh] p-4">
+					<Suspense fallback={"Loading..."}>{mdxContent}</Suspense>
+				</ScrollArea>
 			</DialogContent>
 		</Dialog>
 	);

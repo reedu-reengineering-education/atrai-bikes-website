@@ -1,5 +1,6 @@
-import { i18n } from "@/components/pages/home/i18n";
+import { i18n } from "@/app/[lng]/i18n";
 import H1 from "@/components/ui/typography/H1";
+import H4 from "@/components/ui/typography/H4";
 import { redirect } from "next/navigation";
 import PageDialog from "./page-dialog";
 
@@ -13,31 +14,89 @@ export default async function Page({
 	return (
 		<div className="flex flex-col items-center w-full gap-12">
 			<div className="max-w-6xl mx-auto w-full">
-				<div className="grid md:auto-rows-[18rem] grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto auto-rows-[10rem]">
-					<div className="h-full w-full col-span-2 bg-dot-fuchsia-400/50 relative flex items-center justify-center">
+				<div className="grid lg:auto-rows-[16rem] md:auto-rows-[14rem] grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[12rem]">
+					<div className="h-full w-full col-span-2 bg-dot-fuchsia-400/50 relative flex flex-col items-start justify-center px-4 md:px-8">
 						<div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_45%,black)]" />
-						<H1 className="bg-clip-text text-transparent bg-gradient-to-b from-muted-foreground to-foreground">
+						<H1 className="bg-clip-text text-transparent bg-gradient-to-b from-muted-foreground to-foreground py-0">
 							Atrai Bikes
 						</H1>
+						<H4>
+							transforms bike commuting by providing real-time data insights,
+							fostering collaboration for cyclist-friendly cities.
+						</H4>
 					</div>
 					<PageDialog
 						lng={params.lng}
-						content="about"
+						content="project"
 						animatedBackground="beams"
 					>
 						<div className="absolute bottom-0 left-0 p-4">
-							<h2 className="text-2xl font-bold">{i18n[params.lng].about}</h2>
+							<h2 className="text-2xl font-bold">{i18n[params.lng].project}</h2>
 						</div>
 					</PageDialog>
+
 					<PageDialog
 						lng={params.lng}
-						content="hardware"
+						content="news"
 						animatedBackground="glowing-stars"
-						size="large"
 					>
-						<div className="absolute top-0 right-0 p-4">
+						<div className="absolute bottom-0 left-0 p-4">
+							<h2 className="text-2xl font-bold">{i18n[params.lng].news}</h2>
+						</div>
+					</PageDialog>
+
+					<PageDialog
+						lng={params.lng}
+						content="product"
+						className="col-span-2 md:col-span-3"
+						image="https://cloud.reedu.de/s/zRccjmGC5c3HB89/download"
+					>
+						<div className="absolute bottom-0 left-0 p-4">
+							<h2 className="text-2xl font-bold">{i18n[params.lng].product}</h2>
+						</div>
+					</PageDialog>
+
+					<PageDialog
+						lng={params.lng}
+						content="connect"
+						className="col-span-2 md:col-span-1"
+					>
+						<div className="absolute bottom-0 left-0 p-4">
+							<h2 className="text-2xl font-bold">{i18n[params.lng].connect}</h2>
+						</div>
+					</PageDialog>
+
+					<PageDialog
+						lng={params.lng}
+						content="documents"
+						animatedBackground="grid"
+					>
+						<div className="absolute bottom-0 left-0 p-4">
 							<h2 className="text-2xl font-bold">
-								{i18n[params.lng].hardware}
+								{i18n[params.lng].documents}
+							</h2>
+						</div>
+					</PageDialog>
+
+					<PageDialog
+						lng={params.lng}
+						content="faq"
+						animatedBackground="glowing-stars"
+					>
+						<div className="absolute bottom-0 left-0 p-4">
+							<h2 className="text-2xl font-bold">{i18n[params.lng].faq}</h2>
+						</div>
+					</PageDialog>
+
+					<PageDialog
+						lng={params.lng}
+						content="insights"
+						image="https://cloud.reedu.de/s/ZePFfYBETGWDNmn/download"
+						className="col-span-2 md:row-span-2"
+					>
+						<div className="absolute bottom-0 left-0 p-4">
+							<h2 className="text-2xl font-bold">
+								{i18n[params.lng].insights}
 							</h2>
 						</div>
 					</PageDialog>
@@ -45,116 +104,15 @@ export default async function Page({
 					<PageDialog
 						lng={params.lng}
 						content="partner"
-						animatedBackground="grid"
+						animatedBackground="beams"
+						className="col-span-2"
 					>
-						<div className="absolute top-0 right-0 p-4">
+						<div className="absolute bottom-0 left-0 p-4">
 							<h2 className="text-2xl font-bold">{i18n[params.lng].partner}</h2>
 						</div>
 					</PageDialog>
-
-					<PageDialog lng={params.lng} content="faq" animatedBackground="beams">
-						<div className="absolute top-0 right-0 p-4">
-							<h2 className="text-2xl font-bold">{i18n[params.lng].faq}</h2>
-						</div>
-					</PageDialog>
-
-					<PageDialog
-						lng={params.lng}
-						content="blog"
-						animatedBackground="beams"
-					>
-						<div className="absolute top-0 right-0 p-4">
-							<h2 className="text-2xl font-bold">{i18n[params.lng].blog}</h2>
-						</div>
-					</PageDialog>
-
-					<PageDialog
-						lng={params.lng}
-						content="results"
-						animatedBackground="beams"
-					>
-						<div className="absolute top-0 right-0 p-4">
-							<h2 className="text-2xl font-bold">{i18n[params.lng].results}</h2>
-						</div>
-					</PageDialog>
-
-					<PageDialog
-						lng={params.lng}
-						content="analytics"
-						animatedBackground="beams"
-						size="large"
-					>
-						<div className="absolute top-0 right-0 p-4">
-							<h2 className="text-2xl font-bold">
-								{i18n[params.lng].analytics}
-							</h2>
-						</div>
-					</PageDialog>
-
-					{/* <BentoCard href={"/about"} animatedBackground="beams">
-            <div className="absolute bottom-0 left-0 p-4">
-              <h2 className="text-2xl font-bold">{i18n[lng].about}</h2>
-            </div>
-          </BentoCard>
-          <BentoCard
-            href={"/analytics"}
-            image={DataAnalyticsImage}
-            size="large"
-          >
-            <h2 className="text-2xl font-bold">{i18n[lng].analytics}</h2>
-          </BentoCard>
-          <BentoCard href={"/results"} animatedBackground="glowing-stars">
-            <h2 className="text-2xl font-bold">{i18n[lng].results}</h2>
-          </BentoCard>
-          <BentoCard href={"/blog"} animatedBackground="grid">
-            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center p-4">
-              <h2 className="text-2xl font-bold">{i18n[lng].blog}</h2>
-            </div>
-          </BentoCard>
-          <BentoCard size="large" image={HardwareImage} href={"/hardware"}>
-            <div className="absolute top-0 right-0 p-4">
-              <h2 className="text-2xl font-bold">{i18n[lng].hardware}</h2>
-            </div>
-          </BentoCard>
-
-          <BentoCard href={"/partner"} size="large" animatedBackground="beams">
-            <div className="w-full h-full flex flex-col">
-              <h2 className="text-2xl font-bold">{i18n[lng].partner}</h2>
-              <div className="w-full h-full  flex items-center justify-around group-hover:scale-105 transition-all">
-                <div className="relative h-full aspect-square ">
-                  <Image
-                    src={ICImage}
-                    alt="Instituto Cordial"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="relative h-full aspect-square">
-                  <Image
-                    src={ReeduImage}
-                    alt="Reedu"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-
-                <div className="relative h-full aspect-square">
-                  <Image
-                    src={Image52N}
-                    alt="52n"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            </div>
-          </BentoCard>
-          <BentoCard href={"/faq"} animatedBackground="glowing-stars">
-            <h2 className="text-2xl font-bold">{i18n[lng].faq}</h2>
-          </BentoCard> */}
 				</div>
 			</div>
 		</div>
 	);
-	//   return <Home />;
 }
