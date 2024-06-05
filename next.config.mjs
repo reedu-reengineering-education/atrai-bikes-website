@@ -21,6 +21,14 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "cloud.reedu.de",
 			},
+			{
+				protocol: "https",
+				hostname: "52north.org",
+			},
+			{
+				protocol: "https",
+				hostname: "opensenselab.org",
+			},
 		],
 	},
 };

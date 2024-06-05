@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { promises as fs } from "fs";
+import * as LucideIcons from "lucide-react";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import path from "path";
@@ -55,8 +56,10 @@ export default async function PageDialog({
     title: string;
   }>({
     source: mdxSource,
-    options: { parseFrontmatter: true },
-    components: useMDXComponents({}),
+    options: {
+      parseFrontmatter: true,
+    },
+    components: useMDXComponents({ User2Icon: LucideIcons.User2Icon }),
   });
 
   const Trigger = () => (
