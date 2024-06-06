@@ -1,6 +1,7 @@
 import { BackgroundBeams } from "@/components/animated/beams";
 import { GlowingStarsBackgroundCard } from "@/components/animated/glowing-stars";
 import { useMDXComponents } from "@/components/mdx/mdx-components";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -9,6 +10,7 @@ import { promises as fs } from "fs";
 import * as LucideIcons from "lucide-react";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import Link from "next/link";
 import path from "path";
 import { Suspense } from "react";
 
@@ -59,7 +61,12 @@ export default async function PageDialog({
     options: {
       parseFrontmatter: true,
     },
-    components: useMDXComponents({ User2Icon: LucideIcons.User2Icon }),
+    components: useMDXComponents({
+      User2Icon: LucideIcons.User2Icon,
+      ArrowRightIcon: LucideIcons.ArrowRightIcon,
+      Button: Button,
+      Link: Link,
+    }),
   });
 
   const Trigger = () => (
