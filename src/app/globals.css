@@ -5,32 +5,49 @@
 html, body {
   height: 100%;
   width: 100%;
-
 }
 
 
 @layer base {
   :root {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+/* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: #F04A4B;
+
+    --background: 0 55.25% 4.96%;
+    --foreground: 0 8.5% 98.1%;
+
+    --muted: 0 20.4% 24.8%;
+    --muted-foreground: 0 8.5% 56.2%;
+
+    --popover: 0 25.050000000000004% 1.8599999999999999%;
+    --popover-foreground: 0 8.5% 98.1%;
+
+    --card: 0 25.050000000000004% 1.8599999999999999%;
+    --card-foreground: 0 8.5% 98.1%;
+
+    --border: 0 20.4% 24.8%;
+    --input: 0 20.4% 24.8%;
+
+    --primary: 0 85% 62%;
+    --primary-foreground: 0 8.5% 6.2%;
+
+    --secondary: 0 20.4% 24.8%;
+    --secondary-foreground: 0 8.5% 98.1%;
+
+    --accent: 0 20.4% 24.8%;
+    --accent-foreground: 0 8.5% 98.1%;
+
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --destructive-foreground: 0 8.5% 98.1%;
+
+    --ring: 0 85% 62%;
+
     --radius: 1rem;
+
   }
 }
 
@@ -43,3 +60,15 @@ html, body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+     /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+    }
+  }

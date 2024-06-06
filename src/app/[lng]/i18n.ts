@@ -1,0 +1,32 @@
+export const i18n = {
+	de: {
+		project: "Projekt",
+		news: "Neuigkeiten",
+		product: "Produkt",
+		connect: "Kontakt",
+		documents: "Dokumente",
+		faq: "FAQ",
+		insights: "Einblicke",
+		partner: "Partner",
+	},
+	en: {
+		project: "Project",
+		news: "News",
+		product: "Product",
+		connect: "Stay Connected",
+		documents: "Documents",
+		faq: "FAQ",
+		insights: "Insights",
+		partner: "Partner",
+	},
+	pt: {
+		project: "Projeto",
+		news: "Notícias",
+		product: "Produto",
+		connect: "Fique conectado",
+		documents: "Documentos",
+		faq: "FAQ",
+		insights: "Percepções",
+		partner: "Parceiro",
+	},
+};
