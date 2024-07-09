@@ -13,7 +13,7 @@ export default function Navbar() {
   const lng = pathname.split("/")[1];
 
   return (
-    <nav className="flex items-center justify-between flex-wrap py-6">
+    <nav className="flex items-center justify-between flex-wrap py-6 max-w-6xl mx-auto">
       {!pathname.endsWith(`/${lng}`) ? (
         <Link href={`/${lng}`}>
           <Button variant={"ghost"}>
