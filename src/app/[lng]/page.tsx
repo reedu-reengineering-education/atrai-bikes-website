@@ -16,8 +16,7 @@ export default async function Page({
     <div className="flex flex-col items-center w-full gap-12">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid lg:auto-rows-[16rem] md:auto-rows-[14rem] grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[12rem]">
-          <div className="h-full w-full col-span-2 bg-dot-fuchsia-400/50 relative flex flex-col items-start justify-center px-4 md:px-8">
-            <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_75%,black)]" />
+          <div className="h-full w-full col-span-2 relative flex flex-col items-start justify-center px-4 md:px-8">
             <H1 className="py-0">Atrai Bikes</H1>
             <H4>
               transforms bike commuting by providing real-time data insights,
