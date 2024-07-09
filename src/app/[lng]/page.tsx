@@ -50,7 +50,7 @@ export default async function Page({
             lng={params.lng}
             content="product"
             className="col-span-2 md:col-span-3"
-            image="https://cloud.reedu.de/s/zRccjmGC5c3HB89/download"
+            image="https://cloud.reedu.de/s/M3MKQbFsPfMRq2A/download"
           >
             <div className="absolute bottom-0 left-0 p-4">
               <H3 className="font-bold py-0 border-none text-gradient">
