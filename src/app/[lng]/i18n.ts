@@ -23,10 +23,10 @@ export const i18n = {
 		project: "Projeto",
 		news: "Notícias",
 		product: "Tecnologia",
-		connect: "Fique conectado",
+		connect: "Conecte-se",
 		documents: "Documentos",
 		faq: "FAQ",
-		insights: "Percepções",
-		partner: "Parceiro",
+		insights: "Insight",
+		partner: "Parceiros",
 	},
 };
