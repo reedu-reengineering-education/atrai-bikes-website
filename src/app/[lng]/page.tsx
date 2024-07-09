@@ -28,7 +28,7 @@ export default async function Page({
             animatedBackground="beams"
           >
             <div className="absolute bottom-0 left-0 p-4">
-              <H3 className="font-bold py-0 border-none">
+              <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].project}
               </H3>
             </div>
@@ -40,7 +40,7 @@ export default async function Page({
             animatedBackground="glowing-stars"
           >
             <div className="absolute bottom-0 left-0 p-4">
-              <H3 className="font-bold py-0 border-none">
+              <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].news}
               </H3>
             </div>
@@ -53,7 +53,7 @@ export default async function Page({
             image="https://cloud.reedu.de/s/zRccjmGC5c3HB89/download"
           >
             <div className="absolute bottom-0 left-0 p-4">
-              <H3 className="font-bold py-0 border-none">
+              <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].product}
               </H3>
             </div>
@@ -65,7 +65,7 @@ export default async function Page({
             className="col-span-2 md:col-span-1"
           >
             <div className="absolute bottom-0 left-0 p-4">
-              <H3 className="font-bold py-0 border-none">
+              <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].connect}
               </H3>
             </div>
@@ -77,7 +77,7 @@ export default async function Page({
             animatedBackground="grid"
           >
             <div className="absolute bottom-0 left-0 p-4">
-              <H3 className="font-bold py-0 border-none">
+              <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].documents}
               </H3>
             </div>
@@ -89,7 +89,7 @@ export default async function Page({
             animatedBackground="glowing-stars"
           >
             <div className="absolute bottom-0 left-0 p-4">
-              <H3 className="font-bold py-0 border-none">
+              <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].faq}
               </H3>
             </div>
@@ -102,7 +102,7 @@ export default async function Page({
             className="col-span-2 md:row-span-2"
           >
             <div className="absolute bottom-0 right-0 p-4">
-              <H3 className="font-bold py-0 border-none">
+              <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].insights}
               </H3>
             </div>
@@ -124,7 +124,7 @@ export default async function Page({
               />
             </div>
             <div className="absolute bottom-0 left-0 p-4">
-              <H3 className="font-bold py-0 border-none">
+              <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].partner}
               </H3>
             </div>
