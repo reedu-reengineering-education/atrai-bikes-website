@@ -2,7 +2,7 @@ export const i18n = {
 	de: {
 		project: "Projekt",
 		news: "Neuigkeiten",
-		product: "Produkt",
+		product: "Technologie",
 		connect: "Kontakt",
 		documents: "Dokumente",
 		faq: "FAQ",
@@ -12,7 +12,7 @@ export const i18n = {
 	en: {
 		project: "Project",
 		news: "News",
-		product: "Product",
+		product: "Technology",
 		connect: "Stay Connected",
 		documents: "Documents",
 		faq: "FAQ",
@@ -22,7 +22,7 @@ export const i18n = {
 	pt: {
 		project: "Projeto",
 		news: "Notícias",
-		product: "Produto",
+		product: "Tecnologia",
 		connect: "Fique conectado",
 		documents: "Documentos",
 		faq: "FAQ",
