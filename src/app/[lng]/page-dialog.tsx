@@ -95,7 +95,7 @@ export default async function PageDialog({
           src={image}
           fill
           objectFit="cover"
-          className="object-center brightness-50"
+          className="object-center brightness-[.35] group-hover:scale-105 transition-all"
           alt={content}
         />
       )}

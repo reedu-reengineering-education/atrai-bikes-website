@@ -17,7 +17,7 @@ export const i18n = {
 		documents: "Documents",
 		faq: "FAQ",
 		insights: "Insights",
-		partner: "Partner",
+		partner: "Partners",
 	},
 	pt: {
 		project: "Projeto",

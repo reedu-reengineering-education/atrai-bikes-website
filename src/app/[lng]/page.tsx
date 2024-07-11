@@ -109,17 +109,17 @@ export default async function Page({
           </PageDialog>
 
           <PageDialog lng={params.lng} content="partner" className="col-span-2">
-            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-between py-10 md:py-16">
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-between p-10 md:p-16">
               <img
-                src={"https://cloud.reedu.de/s/BSt4PwxEqBiK9fS/download"}
+                src={"https://cloud.reedu.de/s/EsCZgLQGrk7AnME/download"}
                 className="h-full w-auto"
               />
               <img
-                src={"https://cloud.reedu.de/s/mYk9oe45eKFCW6a/download"}
+                src={"https://cloud.reedu.de/s/twnTTP4S8W23jtn/download"}
                 className="h-full w-auto"
               />
               <img
-                src={"https://cloud.reedu.de/s/D8KoCXaqQibF3kL/download"}
+                src={"https://cloud.reedu.de/s/HyDjDxYmZWGYZdP/download"}
                 className="h-full w-auto"
               />
             </div>
