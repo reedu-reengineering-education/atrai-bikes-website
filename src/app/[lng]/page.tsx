@@ -1,6 +1,7 @@
 import { i18n } from "@/app/[lng]/i18n";
 import H1 from "@/components/ui/typography/H1";
 import H3 from "@/components/ui/typography/H3";
+import H4 from "@/components/ui/typography/H4";
 import { redirect } from "next/navigation";
 import PageDialog from "./page-dialog";
 
@@ -14,6 +15,16 @@ export default async function Page({
   return (
     <div className="flex flex-col items-center w-full gap-12">
       <div className="max-w-6xl mx-auto w-full">
+        <PageDialog lng={params.lng} content="announcement" useTrigger={false}>
+          <div className="w-full py-12 px-4 bg-gradient-to-r from-[#ffc400] to-[#ff9900] flex flex-col items-center justify-center rounded-lg cursor-pointer group mb-12">
+            <H3 className="text-white group-hover:scale-105 transition-all">
+              {i18n[params.lng].announcement}
+            </H3>
+            <H4 className="text-white group-hover:scale-105 transition-all font-semibold">
+              {i18n[params.lng].announcementSubtitle}
+            </H4>
+          </div>
+        </PageDialog>
         <div className="grid lg:auto-rows-[16rem] md:auto-rows-[14rem] grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[12rem]">
           <div className="h-full w-full col-span-2 relative flex flex-col items-start justify-center">
             <H1 className="py-0">Atrai Bikes</H1>
