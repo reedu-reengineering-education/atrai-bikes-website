@@ -17,12 +17,12 @@ export default async function Page({
       <div className="max-w-6xl mx-auto w-full">
         <PageDialog lng={params.lng} content="announcement" useTrigger={false}>
           <div className="w-full py-12 px-4 bg-gradient-to-r from-[#ffc400] to-[#ff9900] flex flex-col items-center justify-center rounded-lg cursor-pointer group mb-12">
+            <H4 className="text-white group-hover:scale-105 transition-all font-semibold uppercase">
+              {i18n[params.lng].announcementSubtitle}
+            </H4>
             <H3 className="text-white group-hover:scale-105 transition-all">
               {i18n[params.lng].announcement}
             </H3>
-            <H4 className="text-white group-hover:scale-105 transition-all font-semibold">
-              {i18n[params.lng].announcementSubtitle}
-            </H4>
           </div>
         </PageDialog>
         <div className="grid lg:auto-rows-[16rem] md:auto-rows-[14rem] grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[12rem]">
