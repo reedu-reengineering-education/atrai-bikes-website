@@ -35,6 +35,7 @@ async function getData(content: string, lng = "de") {
 
 export default async function PageDialog({
   content,
+  useTrigger = true,
   lng,
   animatedBackground,
   children,
@@ -42,6 +43,7 @@ export default async function PageDialog({
   image,
 }: {
   content: string;
+  useTrigger?: boolean;
   lng: string;
   animatedBackground?:
     | "beams"
@@ -107,7 +109,7 @@ export default async function PageDialog({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Trigger />
+        {useTrigger ? <Trigger /> : children}
       </DialogTrigger>
       <DialogContent className="max-w-5xl rounded-lg overflow-auto no-scrollbar">
         <ScrollArea className="max-h-[80vh] p-4">
