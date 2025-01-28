@@ -1,7 +1,86 @@
 # Technology
 
-The Atrai bikes project utilizes the senseBox:bike, an advanced open-source technology developed by the Institute for Geoinformatics at the University of Münster and re:edu. Powered by the ESP32S2 microcontroller, it offers WiFi for data transmission, an SD card slot for storage, and a companion app for data privacy control.
 
-The senseBox:bike is equipped with various sensors to capture environmental data, cycling infrastructure details, and safety metrics. These include the HDC1080 for temperature and humidity, the Sensirion SPS30 for fine dust pollution, the MPU6050 for vibration, and a Time-of-Flight (ToF) sensor with AI for object detection.
+<div className="flex items-start flex-col md:flex-row">
+  {/* Imagem */}
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img 
+      src="https://cloud.reedu.de/s/dLzPNGGP3o5MMHa/download" 
+      alt="Descrição da imagem 1" 
+      className="w-full object-cover"
+    />
+  </div>
+  <p className="flex-1 pr-4 md:pr-0">
+    The Atrai Bike project is composed by three main technologies: the open-source hardware senseBox:bike, the mobile app and the GeoAI platform. These technologies connect the data collection and citizen participation to the analysis, overview accessible and decision making. 
+  </p>
+</div>
 
-These sensors help assess cycle path quality, monitor environmental conditions, and enhance biking safety. The device also features WiFi connectivity for smartphone integration and an LED display for real-time feedback on battery and system status. The senseBox:bike is a powerful tool for urban mobility research and data-driven city planning.
+<div className="flex items-start flex-col md:flex-row mt-8">
+  {/* Imagem */}
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img 
+      src="https://cloud.reedu.de/s/Qcf4QPML7TPaJ3r/download" 
+      alt="Descrição da imagem 2" 
+      className="w-full object-cover"
+    />
+  </div>
+  <p className="flex-1">
+    On the first part, the open-source hardware senseBox:bike is powered by the ESP32S2 microcontroller and sensors to capture environmental data, cycling infrastructure details, and safety metrics. These include the HDC1080 for temperature and humidity, the Sensirion SPS30 for fine dust pollution, the MPU6050 for vibration, and a Time-of-Flight (ToF) sensor with AI for object detection.
+  </p>
+</div>
+
+<div className="flex items-start flex-col md:flex-row mt-8">
+  {/* Imagem */}
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img 
+      src="https://cloud.reedu.de/s/mDYfaGgCrpqJyyp/download" 
+      alt="Descrição da imagem 2" 
+      className="w-full object-cover"
+    />
+  </div>
+  <p className="flex-1">
+    The VL53L8CX multizone ToF sensor detects passing traffic by measuring distances across 8x8 zones, identifying vehicles or cyclists up to 200 cm away under daylight, enough to flag cars breaching the 150 cm safety margin. It processes distance data using AI, achieving 96% accuracy in detecting overtaking maneuvers with efficient performance at a 10 Hz sampling rate.
+  </p>
+</div>
+
+<div className="flex items-start flex-col md:flex-row mt-8">
+  {/* Imagem */}
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img 
+      src="https://cloud.reedu.de/s/ERDwQbGoAcAoGff/download" 
+      alt="Descrição da imagem 2" 
+      className="w-full object-cover"
+    />
+  </div>
+  <p className="flex-1">
+    The MPU6050 sensor uses acceleration and gyroscope data to classify road surfaces into four types (asphalt, compacted, paving, and sett) and a "standing" class to filter stationary data. Processed at 10 Hz over 3 seconds, features like spectral power and RMS are fed into an AI model, achieving 79.21% accuracy overall, with 100% for "sett" and "standing" surfaces.
+    </p>
+</div>
+
+<div className="flex items-start flex-col md:flex-row mt-8">
+  {/* Imagem */}
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img 
+      src="https://cloud.reedu.de/s/y4a7S4x3eakHz8y/download" 
+      alt="Descrição da imagem 2" 
+      className="w-full object-cover"
+    />
+  </div>
+  <p className="flex-1">
+    While using the senseBox:bike, citizens can view live data in their app, allowing them to track their route and urban environment in real-time. After the ride, they can interact with the collected data, exploring the route and information about the surrounding area on a map. 
+    </p>
+</div>
+
+<div className="flex items-start flex-col md:flex-row mt-8">
+ {/* Imagem */}
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img 
+      src="https://cloud.reedu.de/s/foCPcxL89PZSPDg/download" 
+      alt="Descrição da imagem 2" 
+      className="w-full object-cover"
+    />
+  </div>
+  <p className="flex-1">
+    Once the ride is complete, the data is stored on the open data platform opensenseMap. Soon, it will be analyzed and visualized on a Data Urban platform designed to support decision-making. This will help governments and companies optimize logistics, improve bike lane infrastructure, and gain insights into cyclist flow within cities.
+  </p>
+</div>
