@@ -29,8 +29,7 @@ export default async function Page({
           <div className="h-full w-full col-span-2 relative flex flex-col items-start justify-center">
             <H1 className="py-0">Atrai Bikes</H1>
             <H3>
-              transforms bike commuting by providing real-time data insights,
-              fostering collaboration for cyclist-friendly cities.
+              {i18n[params.lng].projectSubtitle}
             </H3>
           </div>
           <PageDialog
@@ -38,6 +37,7 @@ export default async function Page({
             content="project"
             animatedBackground="beams"
           >
+
             <div className="absolute bottom-0 left-0 p-4">
               <H3 className="font-bold py-0 border-none text-gradient">
                 {i18n[params.lng].project}
@@ -61,7 +61,7 @@ export default async function Page({
             lng={params.lng}
             content="product"
             className="col-span-2 md:col-span-3"
-            image="https://cloud.reedu.de/s/M3MKQbFsPfMRq2A/download"
+            image="https://cloud.reedu.de/s/ij4GfebSrCqY4nT/download"
           >
             <div className="absolute bottom-0 left-0 p-4">
               <H3 className="font-bold py-0 border-none text-gradient">

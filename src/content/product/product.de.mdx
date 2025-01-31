@@ -1,7 +1,83 @@
 # Technologie
 
-Das Atrai Bikes-Projekt nutzt die senseBox:bike, eine fortschrittliche Open-Source-Technologie, die vom Institut für Geoinformatik der Universität Münster und re:edu entwickelt wurde. Angetrieben vom ESP32S2-Mikrocontroller bietet sie WiFi für die Datenübertragung, einen SD-Kartensteckplatz für Speicher und eine Begleit-App zur Kontrolle der Datensicherheit.
+<div className="flex items-start flex-col md:flex-row">
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img
+      src="https://cloud.reedu.de/s/dLzPNGGP3o5MMHa/download"
+      alt="Beschreibung des Bildes 1"
+      className="w-full object-cover rounded"
+    />
+  </div>
+  <p className="flex-1 pr-4 md:pr-0">
+    Das Atrai-Bike-Projekt basiert auf drei Haupttechnologien: der Open-Source-Hardware senseBox:bike, der mobilen App und der GeoAI-Plattform. Diese Technologien verbinden Datenerfassung und Bürgerbeteiligung mit Analyse, Übersichtlichkeit und Entscheidungsfindung.
+  </p>
+</div>
 
-Die senseBox:bike ist mit verschiedenen Sensoren ausgestattet, um Umweltdaten, Details zur Fahrrad-Infrastruktur und Sicherheitsmetriken zu erfassen. Dazu gehören der HDC1080 für Temperatur und Luftfeuchtigkeit, der Sensirion SPS30 für Feinstaubverschmutzung, der MPU6050 für Vibrationen und ein Time-of-Flight (ToF) Sensor mit KI zur Objekterkennung.
+<div className="flex items-start flex-col md:flex-row mt-8">
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img
+      src="https://cloud.reedu.de/s/iseWrG7c2yTmSH8/download"
+      alt="Beschreibung des Bildes 2"
+      className="w-full object-cover rounded"
+    />
+  </div>
+  <p className="flex-1">
+    Die Open-Source-Hardware senseBox:bike basiert auf dem ESP32S2-Mikrocontroller und verschiedenen Sensoren zur Erfassung von Umweltdaten, Infrastrukturmerkmalen für Radfahrer und Sicherheitsmetriken. Dazu gehören der HDC1080 für Temperatur und Luftfeuchtigkeit, der Sensirion SPS30 für Feinstaubbelastung, der MPU6050 für Vibrationen und ein Time-of-Flight (ToF)-Sensor mit KI zur Objekterkennung.
+  </p>
+</div>
 
-Diese Sensoren helfen, die Qualität der Radwege zu bewerten, Umweltbedingungen zu überwachen und die Sicherheit beim Radfahren zu erhöhen. Das Gerät verfügt zudem über WiFi-Konnektivität für die Integration von Smartphones und ein LED-Display für Echtzeit-Feedback zum Batterie- und Systemstatus. Die senseBox:bike ist ein leistungsstarkes Werkzeug für die Forschung zur urbanen Mobilität und datengetriebene Stadtplanung.
+<div className="flex items-start flex-col md:flex-row mt-8">
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img
+      src="https://cloud.reedu.de/s/mDYfaGgCrpqJyyp/download"
+      alt="Beschreibung des Bildes 3"
+      className="w-full object-cover rounded"
+    />
+  </div>
+  <p className="flex-1">
+    Der VL53L8CX-Multizonen-ToF-Sensor erkennt vorbeifahrenden Verkehr, indem er Entfernungen über 8x8 Zonen misst und Fahrzeuge oder Radfahrer bis zu 200 cm entfernt bei Tageslicht identifiziert. Dies reicht aus, um Autos zu markieren, die den 150 cm-Sicherheitsabstand unterschreiten. Die Entfernungsmessungen werden mit KI verarbeitet und ermöglichen eine 96%ige Genauigkeit bei der Erkennung von Überholmanövern mit einer effizienten Abtastrate von 10 Hz.
+  </p>
+</div>
+
+<div className="flex items-start flex-col md:flex-row mt-8">
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+  <video
+      src="https://cloud.reedu.de/s/kc3D6zBoNbQN3jD/download"
+      alt="Descrição da imagem 2"
+      autoPlay
+      loop
+      className="w-full object-cover rounded-lg border-black border-8 max-w-[18rem] mx-auto">
+    </video>
+  </div>
+  <p className="flex-1">
+    Der MPU6050-Sensor nutzt Beschleunigungs- und Gyroskopdaten, um Straßenoberflächen in vier Kategorien zu klassifizieren: Asphalt, verdichtet, Pflaster und Kopfsteinpflaster. Zudem gibt es eine „Stehend“-Klasse, um stationäre Daten herauszufiltern. Die Verarbeitung erfolgt mit einer Abtastrate von 10 Hz über 3 Sekunden, wobei Merkmale wie spektrale Leistung und RMS in ein KI-Modell eingespeist werden. Dieses erreicht eine Gesamtgenauigkeit von 79,21%, wobei „Kopfsteinpflaster“ und „Stehend“ zu 100% korrekt erkannt werden.
+  </p>
+</div>
+
+<div className="flex items-start flex-col md:flex-row mt-8">
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <video
+      src="https://cloud.reedu.de/s/w6zzBsTE4EwttsY/download"
+      alt="Descrição da imagem 2"
+      autoPlay
+      loop
+      className="w-full object-cover rounded-lg border-black border-8 max-w-[18rem] mx-auto">
+    </video>
+  </div>
+  <p className="flex-1">
+    Während der Nutzung der senseBox:bike können Bürger*innen die Live-Daten in der App sehen und so ihre Route sowie die städtische Umgebung in Echtzeit verfolgen. Nach der Fahrt können sie die gesammelten Daten interaktiv erkunden und ihre Route sowie Umgebungsinformationen auf einer Karte analysieren.
+  </p>
+</div>
+
+<div className="flex items-start flex-col md:flex-row mt-8">
+  <div className="w-full md:w-[40%] md:pr-4 flex justify-start">
+    <img
+      src="https://cloud.reedu.de/s/foCPcxL89PZSPDg/download"
+      alt="Beschreibung des Bildes 6"
+      className="w-full object-cover rounded"
+    />
+  </div>
+  <p className="flex-1">
+    Nach der Fahrt werden die gesammelten Daten auf der Open-Data-Plattform openSenseMap gespeichert. In Zukunft werden sie zudem auf einer Urban Data Plattform analysiert und visualisiert, um die Entscheidungsfindung zu unterstützen. Dies wird Regierungen und Unternehmen helfen, die Logistik zu optimieren, die Radinfrastruktur zu verbessern und Einblicke in den Radverkehr in Städten zu gewinnen.
+  </p>
+</div>
