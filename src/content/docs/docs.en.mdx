@@ -1,0 +1,63 @@
+# senseBox:bike Technical Documentation
+
+The senseBox:bike is a device designed to collect environmental and bicycle infrastructure-related data. There are currently two models available: the senseBox:bike Classic and the senseBox:bike ATRAI. Below is a detailed comparison of the sensors built into each model, along with their measurement capabilities, possible value ranges, and the values returned when no data is collected.
+
+## senseBox:bike Classic
+
+| **Sensor**                | **Measurement**                     | **Min Value** | **Max Value** | **No Data Value** | **Aggregation Method** |
+|---------------------------|-------------------------------------|---------------|---------------|-------------------|------------------------|
+| Temperature               | Ambient temperature                 | -40°C         | 125°C         | N/A               | Mean                   |
+| Humidity                  | Relative humidity                   | 0%            | 100%          | N/A               | Mean                   |
+| Fine Dust                 | PM1, PM2.5, PM4, PM10 concentrations| 0 µg/m³       | 1000 µg/m³    | N/A               | Mean                   |
+| Overtaking Distance       | Distance of overtaking vehicles     | 0 cm          | 500 cm        | 400 cm            | Minimum                |
+| Acceleration Amplitude    | Change in acceleration (X, Y, Z axes)| 0             | Depends on sensor configuration | 0          | Mean                   |
+
+## senseBox:bike ATRAI
+
+| **Sensor**                | **Measurement**                     | **Min Value** | **Max Value** | **No Data Value** | **Aggregation Method** |
+|---------------------------|-------------------------------------|---------------|---------------|-------------------|------------------------|
+| Temperature               | Ambient temperature                 | -40°C         | 125°C         | N/A               | Mean                   |
+| Humidity                  | Relative humidity                   | 0%            | 100%          | N/A               | Mean                   |
+| Fine Dust                 | PM1, PM2.5, PM4, PM10 concentrations| 0 µg/m³       | 1000 µg/m³    | N/A               | Mean                   |
+| Overtaking Distance       | Distance of overtaking vehicles     | 0 cm          | 500 cm        | 0 cm              | Minimum                |
+| Overtaking Maneuver       | Probability of overtaking maneuver  | 0%            | 100%          | 0%                | Maximum                |
+| Surface Detection         | Surface type probability            | 0%            | 100%          | 0%                | Mean                   |
+| Standing                  | Probability of standing still       | 0%            | 100%          | 0%                | Mean                   |
+| Surface Anomaly           | Detection of surface anomalies       | N/A           | N/A           | N/A              | Mean                   |
+
+### Notes:
+- **Temperature and Humidity**: Standard environmental sensors with typical ranges for outdoor use. No specific "no data" value as these sensors continuously measure the environment.
+- **Fine Dust**: Measures particulate matter concentrations in the air, crucial for air quality monitoring.
+- **Overtaking Distance**: Measures the distance between the bike and overtaking vehicles using different sensor technologies in each model. Returns 400 cm / 0 cm if no vehicle is detected.
+- **Acceleration Amplitude**: Measures the change in acceleration in the X, Y, and Z axes. The units depend on the sensor configuration. Returns 0 if no significant change is detected.
+- **Overtaking Maneuver**: Estimates the likelihood of an overtaking maneuver occurring. Returns 0% if no maneuver is detected.
+- **Surface Detection**: Identifies the type of surface the bike is on with a probability score. Returns 0% if no specific surface type is detected.
+- **Standing**: Detects if the bike is stationary with a probability score. Returns 0% if the bike is in motion.
+- **Surface Anomaly**: Detects irregularities or issues with the riding surface. Returns "None" if no anomalies are detected.
+
+## senseBox:bike App Integration
+
+The senseBox:bike device connects to the senseBox:bike app, which receives both sensor values and GPS data. In cases where multiple sensor values are received while the GPS data remains stale, the app aggregates these incoming sensor values into a single value until a new GPS position is available.
+
+### Aggregation Rules:
+- **Mean Values**: Most sensors return the mean of the aggregated values.
+- **Minimum Value**: The overtaking distance sensor returns the minimum value.
+- **Maximum Value**: The overtaking maneuver sensor returns the maximum value.
+
+This aggregation ensures that the app provides accurate and up-to-date information, even when GPS data is not frequently updated.
+
+## Comparability
+
+### Comparable Measurements:
+- **Environmental Sensors**: Both models feature temperature and humidity sensors that can be directly compared, as they measure the same environmental parameters using similar technology.
+- **Fine Dust**: Both models measure particulate matter concentrations (PM1, PM2.5, PM4, PM10) and can be compared directly.
+- **Overtaking Distance**: Although the sensor technology differs, the measurement of overtaking distance can be compared as both models aim to measure the same parameter.
+
+### Non-Comparable Measurements:
+- **Overtaking Maneuver**: The ATRAI model calculates the probability of an overtaking maneuver, which is not measured by the Classic model.
+- **Standing**: The ATRAI model detects the probability of the bike being stationary, a feature not present in the Classic model.
+- **Surface Detection**: The ATRAI model uses advanced sensors to detect and classify surface types with a probability score, while the Classic model does not have this capability.
+- **Acceleration**: The Classic model measures changes in acceleration using an amplitude-based approach, whereas the ATRAI model does not directly measure acceleration in the same manner.
+- **Surface Anomaly**: The ATRAI model detects surface anomalies, which is not a feature of the Classic model.
+
+These differences highlight the unique strengths of each model and should be considered when analyzing data from either device.
