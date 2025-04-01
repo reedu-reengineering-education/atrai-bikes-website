@@ -15,7 +15,7 @@ import path from "path";
 import { Suspense } from "react";
 import remarkGfm from "remark-gfm";
 
-async function getData(content: string, lng = "de") {
+async function getData() {
   try {
     const file = await fs.readFile(
       path.join(
@@ -42,23 +42,8 @@ async function getData(content: string, lng = "de") {
   }
 }
 
-export default async function PageDialog({
-  content,
-  lng,
-}: {
-  content: string;
-  useTrigger?: boolean;
-  lng: string;
-  animatedBackground?:
-    | "beams"
-    | "glowing-stars"
-    | "grid"
-    | "background-gradient";
-  children: React.ReactNode;
-  className?: string;
-  image?: string;
-}) {
-  const { mdxSource } = await getData(content, lng);
+export default async function Page() {
+  const { mdxSource } = await getData();
 
   const { content: mdxContent, frontmatter } = await compileMDX<{
     title: string;
