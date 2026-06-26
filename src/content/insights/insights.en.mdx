@@ -1,6 +1,39 @@
 # Insights
 
-We are currently analyzing data to provide insights about the cycling environment. As we complete our analysis, we will share the key features and findings from the data collected by cyclists and senseBox:bike
+## The Atrai Bikes Data Platform – What We Built and What We Learned
 
-We will share updates here soon.
-Please check back for the latest information or send us a message to Stay Connected.
+The atrAI Bikes project has reached an important milestone: a fully functional, open-source geoinformation platform that integrates citizen-generated bicycle sensor data with municipal datasets – and we have validated it in two cities on two continents.
+
+### The Platform
+
+At the core of the system is the **senseBox:bike**, a modular sensor device that records overtaking distances (AI-detected on-device), road vibrations for surface quality assessment, environmental parameters (fine particulate matter, temperature, humidity), and GPS position via a companion mobile app. All data processing happens directly on the device using edge computing, ensuring privacy by design.
+
+The collected data is uploaded to the **openSenseMap** platform and automatically ingested daily into a **PostGIS** database via an OGC API Process. From there, a set of automated analysis pipelines computes road-segment-level indicators:
+
+- **Surface quality** – classifying rough or damaged road sections
+- **Overtaking distances** – per road segment, revealing dangerous stretches
+- **Danger zones** – combining overtaking proximity and fine dust exposure
+- **Traffic flow & speed** – average speeds and flow patterns
+- **Campaign statistics** – aggregated summaries per measurement campaign
+
+Results are served as **OGC API Features** via pygeoapi and as vector tiles via the Martin tile server. The interactive web frontend, built on **kepler.gl**, allows users to explore, overlay, and export all datasets. A notable open-source contribution made during the project was adding **OGC WMS support** to kepler.gl, enabling seamless integration of official municipal map layers.
+
+### Validation in Münster and São Paulo
+
+In September 2025, the prototype was evaluated in two workshops with very different audiences:
+
+**Münster** brought together city planners, university researchers, and smart city stakeholders. Participants independently completed three tasks – identifying danger hotspots, comparing temporal variations, and exporting indicators for reports. The feedback highlighted strong practical value, with particular praise for the GIS export functionality and the open, interoperable architecture.
+
+**São Paulo** focused on analytical depth with statistics experts and volunteer data collectors. Discussions around data quality, aggregation methods, and scalability for large-scale measurement campaigns led directly to improvements in direction-aware trip visualization and data aggregation logic.
+
+Both workshops confirmed that **road-segment-level indicators**, derived from cyclists' own perspectives, address a real gap in existing urban mobility data ecosystems – one that commercial platforms (Strava, Komoot) and traditional counting stations cannot fill.
+
+### Key Takeaways
+
+- Citizen-generated sensor data **can** be integrated into municipal GIS workflows using open standards (OGC API)
+- The platform is currently at **TRL 5** (technology validated in a relevant environment)
+- Participants identified clear demand for better onboarding tutorials, richer metadata documentation, and collaborative annotation features
+- Ensuring **data representativeness** remains an open challenge, especially in areas with low cycling activity
+- Future work will focus on scalability via vector tiles, on-demand spatial/temporal filters, and broader validation with additional municipalities
+
+The paper presenting these results was published at **FOSSGIS 2026** (DOI: [10.5281/zenodo.18183646](https://doi.org/10.5281/zenodo.18183646)).

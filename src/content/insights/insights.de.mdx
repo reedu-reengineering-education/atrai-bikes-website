@@ -1,5 +1,39 @@
 # Insights
 
-Aktuell analysieren wir Daten, um Einblicke in die Radfahrumgebung zu geben. Sobald wir unsere Analyse abgeschlossen haben, werden wir die wichtigsten Merkmale und Erkenntnisse aus den von Radfahrern und senseBox:bike gesammelten Daten teilen.
+## Die Atrai Bikes Datenplattform – Was wir gebaut haben und was wir gelernt haben
 
-Wir werden hier bald Updates teilen. Bitte schauen Sie regelmäßig vorbei oder senden Sie uns eine Nachricht, um in Verbindung zu bleiben.
+Das atrAI Bikes Projekt hat einen wichtigen Meilenstein erreicht: eine vollständig funktionsfähige, quelloffene Geoinformationsplattform, die bürgergenerierte Fahrradsensordaten mit kommunalen Datensätzen integriert – und die wir in zwei Städten auf zwei Kontinenten validiert haben.
+
+### Die Plattform
+
+Das Herzstück des Systems ist die **senseBox:bike**, ein modulares Sensorgerät, das Überholabstände (KI-gestützt direkt auf dem Gerät erkannt), Straßenerschütterungen zur Bewertung der Oberflächenqualität, Umweltparameter (Feinstaub, Temperatur, Luftfeuchtigkeit) sowie GPS-Positionen über eine Begleit-App erfasst. Die gesamte Datenverarbeitung erfolgt direkt auf dem Gerät per Edge Computing – datenschutzfreundlich by design.
+
+Die gesammelten Daten werden auf die **openSenseMap** hochgeladen und täglich automatisch über einen OGC API Prozess in eine **PostGIS**-Datenbank importiert. Von dort berechnen automatisierte Analysepipelines Indikatoren auf Straßenabschnittsebene:
+
+- **Oberflächenqualität** – Klassifizierung unebener oder beschädigter Streckenabschnitte
+- **Überholabstände** – pro Straßenabschnitt, um gefährliche Bereiche sichtbar zu machen
+- **Gefahrenstellen** – Kombination aus knappen Überholabständen und Feinstaubbelastung
+- **Verkehrsfluss & Geschwindigkeit** – Durchschnittsgeschwindigkeiten und Flussmuster
+- **Kampagnenstatistiken** – aggregierte Auswertungen je Messkampagne
+
+Ergebnisse werden als **OGC API Features** über pygeoapi und als Vektorkacheln über den Martin Tile Server bereitgestellt. Das interaktive Web-Frontend, aufgebaut auf **kepler.gl**, erlaubt es, alle Datensätze zu erkunden, zu überlagern und zu exportieren. Ein wesentlicher Open-Source-Beitrag des Projekts war die Ergänzung von **OGC WMS-Unterstützung** in kepler.gl, die eine nahtlose Integration offizieller kommunaler Hintergrundkarten ermöglicht.
+
+### Validierung in Münster und São Paulo
+
+Im September 2025 wurde der Prototyp in zwei Workshops mit sehr unterschiedlichen Zielgruppen evaluiert:
+
+**Münster** brachte Stadtplaner:innen, Universitätsforschende und Smart-City-Stakeholder zusammen. Die Teilnehmenden bearbeiteten eigenständig drei Aufgaben – Identifikation von Gefahrenstellen, Vergleich zeitlicher Variationen und Export von Indikatoren für Berichte. Das Feedback hob den hohen praktischen Nutzen hervor, insbesondere die GIS-Exportfunktionen und die offene, interoperable Architektur.
+
+**São Paulo** fokussierte auf analytische Tiefe mit Statistikexpert:innen und freiwilligen Datenerhebenden. Diskussionen zu Datenqualität, Aggregationsmethoden und Skalierbarkeit für großflächige Messkampagnen führten direkt zu Verbesserungen bei der richtungsabhängigen Fahrtenvisualisierung und der Datenaggregationslogik.
+
+Beide Workshops bestätigten, dass **Indikatoren auf Straßenabschnittsebene**, abgeleitet aus der Perspektive der Radfahrenden, eine reale Lücke in bestehenden urbanen Mobilitätsdaten-Ökosystemen schließen – eine Lücke, die kommerzielle Plattformen (Strava, Komoot) und klassische Zählstellen nicht füllen können.
+
+### Zentrale Erkenntnisse
+
+- Bürgergenerierte Sensordaten **können** mithilfe offener Standards (OGC API) in kommunale GIS-Workflows integriert werden
+- Die Plattform befindet sich derzeit auf **TRL 5** (Technologie in relevanter Umgebung validiert)
+- Teilnehmende identifizierten konkreten Bedarf an besseren Onboarding-Tutorials, ausführlicherer Metadaten-Dokumentation und kollaborativen Kommentarfunktionen
+- Die Sicherstellung der **Datenrepräsentativität** bleibt eine offene Herausforderung, besonders in Gebieten mit geringem Radverkehrsaufkommen
+- Künftige Arbeiten fokussieren auf Skalierbarkeit über Vektorkacheln, On-Demand-Filter für Raum und Zeit sowie eine breitere Validierung mit weiteren Kommunen
+
+Der Beitrag mit diesen Ergebnissen wurde auf der **FOSSGIS 2026** veröffentlicht (DOI: [10.5281/zenodo.18183646](https://doi.org/10.5281/zenodo.18183646)).

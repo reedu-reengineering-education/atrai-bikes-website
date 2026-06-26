@@ -1,5 +1,39 @@
 # Insights
 
-Atualmente estamos analisando os dados para fornecer insights sobre bicicletas e cidades. À medida que concluirmos nossa análise, compartilharemos as principais descobertas a partir dos dados coletados por ciclistas e pela senseBox:bike
+## A Plataforma de Dados Atrai Bikes – O que construímos e o que aprendemos
 
-Em breve, compartilharemos atualizações aqui. Por favor, em breve volte a conferir essa seção ou entre em contato conosco pelo "Mantenha-se conectado"
+O projeto atrAI Bikes alcançou um marco importante: uma plataforma de geoinformação de código aberto, totalmente funcional, que integra dados de sensores de ciclismo gerados por cidadãos com conjuntos de dados municipais – e que validamos em duas cidades em dois continentes.
+
+### A Plataforma
+
+No núcleo do sistema está a **senseBox:bike**, um dispositivo sensor modular que registra distâncias de ultrapassagem (detectadas por IA diretamente no dispositivo), vibrações da estrada para avaliação da qualidade do pavimento, parâmetros ambientais (material particulado fino, temperatura, umidade) e posição GPS via aplicativo móvel. Todo o processamento de dados acontece diretamente no dispositivo com edge computing, garantindo privacidade desde a concepção.
+
+Os dados coletados são enviados para a plataforma **openSenseMap** e importados automaticamente todos os dias para um banco de dados **PostGIS** via um Processo OGC API. A partir daí, pipelines de análise automatizados calculam indicadores no nível de segmento de via:
+
+- **Qualidade do pavimento** – classificação de trechos irregulares ou danificados
+- **Distâncias de ultrapassagem** – por segmento de via, revelando trechos perigosos
+- **Zonas de perigo** – combinando ultrapassagens próximas e exposição a material particulado
+- **Fluxo de tráfego e velocidade** – velocidades médias e padrões de fluxo
+- **Estatísticas de campanha** – resumos agregados por campanha de medição
+
+Os resultados são disponibilizados como **OGC API Features** via pygeoapi e como tiles vetoriais via servidor Martin. O frontend web interativo, construído sobre **kepler.gl**, permite explorar, sobrepor e exportar todos os conjuntos de dados. Uma contribuição open-source notável do projeto foi a adição de **suporte a OGC WMS** ao kepler.gl, permitindo a integração transparente de camadas de mapas municipais oficiais.
+
+### Validação em Münster e São Paulo
+
+Em setembro de 2025, o protótipo foi avaliado em dois workshops com públicos muito diferentes:
+
+**Münster** reuniu planejadores urbanos, pesquisadores universitários e stakeholders de smart city. Os participantes realizaram de forma independente três tarefas – identificação de pontos perigosos, comparação de variações temporais e exportação de indicadores para relatórios. O feedback destacou forte valor prático, com elogios especiais à funcionalidade de exportação GIS e à arquitetura aberta e interoperável.
+
+**São Paulo** focou na profundidade analítica com especialistas em estatística e coletores voluntários de dados. Discussões sobre qualidade dos dados, métodos de agregação e escalabilidade para campanhas de medição em larga escala levaram diretamente a melhorias na visualização de viagens por direção e na lógica de agregação de dados.
+
+Ambos os workshops confirmaram que **indicadores no nível de segmento de via**, derivados da perspectiva dos próprios ciclistas, abordam uma lacuna real nos ecossistemas de dados de mobilidade urbana existentes – uma que plataformas comerciais (Strava, Komoot) e estações de contagem tradicionais não conseguem preencher.
+
+### Principais Conclusões
+
+- Dados de sensores gerados por cidadãos **podem** ser integrados em fluxos de trabalho GIS municipais usando padrões abertos (OGC API)
+- A plataforma está atualmente no **TRL 5** (tecnologia validada em ambiente relevante)
+- Os participantes identificaram demanda clara por melhores tutoriais de integração, documentação de metadados mais rica e recursos de anotação colaborativa
+- Garantir a **representatividade dos dados** continua sendo um desafio em aberto, especialmente em áreas com baixa atividade ciclística
+- Trabalhos futuros focarão em escalabilidade via tiles vetoriais, filtros espaciais/temporais sob demanda e validação mais ampla com municípios adicionais
+
+O artigo apresentando esses resultados foi publicado na **FOSSGIS 2026** (DOI: [10.5281/zenodo.18183646](https://doi.org/10.5281/zenodo.18183646)).
