@@ -1,16 +1,13 @@
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
+"use client";
+
+import { useEffect } from "react";
 
 export default function Page() {
-	const language = headers().get("Accept-Language");
+	useEffect(() => {
+		const lang = navigator.language?.slice(0, 2);
+		const target = ["de", "en", "pt"].includes(lang) ? lang : "en";
+		window.location.replace(`/${target}/`);
+	}, []);
 
-	if (language?.includes("de")) {
-		redirect("/de");
-	}
-
-	if (language?.includes("pt")) {
-		redirect("/pt");
-	}
-
-	redirect("/en");
+	return null;
 }

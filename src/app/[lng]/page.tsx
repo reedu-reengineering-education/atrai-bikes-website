@@ -5,6 +5,10 @@ import { redirect } from "next/navigation";
 import PageDialog from "./page-dialog";
 import H4 from "@/components/ui/typography/H4";
 
+export function generateStaticParams() {
+  return [{ lng: "de" }, { lng: "en" }, { lng: "pt" }];
+}
+
 export default async function Page({
   params,
 }: {
